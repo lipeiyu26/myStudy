@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>服务器端</title>
+</head>
+<body>
+<h1>服务器端</h1>
+<p>给客户端发送信息：</p>
+<form method="post" action="/server" target="nm_iframe">
+    <label>目标用户：</label>
+    <input name = "user" placeholder="请输入接收信息的用户"/>
+    <label>信息：</label>
+    <input name = "msg" placeholder="请输入信息"/>
+    <input type="submit" id="id_submit" name="nm_submit" value="发送" onclick="changeNum()"/>
+</form>
+<p>已发送<label id = "num">0</label>次消息</p>
+&lt;iframex id="id_iframe" name="nm_iframe" style="display:none;">&lt;/iframex&gt;
+</body>
+<script>
+    var num = 0;
+    function changeNum() {
+        num++;
+        document.getElementById("num").innerText = num;
+    }
+</script>
+</html>
